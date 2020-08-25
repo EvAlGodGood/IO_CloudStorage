@@ -21,17 +21,19 @@
         </Menu>
     </MenuBar>
 
+    <TextField promptText="Server checked" HBox.hgrow="ALWAYS" />
+
     <HBox>
         <ComboBox />
         <TextField HBox.hgrow="ALWAYS" />
         <Button text="Вверх" />
     </HBox>
 
-    <ListView VBox.vgrow="ALWAYS"/>
+    <ListView fx:id="listFileClient" VBox.vgrow="ALWAYS"/>
 
     <HBox spacing="5">
-        <Button maxWidth="Infinity" text="Выгрузить на сервер" HBox.hgrow="ALWAYS" />
-        <Button maxWidth="Infinity" text="Загрузить с сервера" HBox.hgrow="ALWAYS" />
+        <Button maxWidth="Infinity" text="Выгрузить на сервер" HBox.hgrow="ALWAYS" onAction="#btnSendFileAction"/>
+        <Button maxWidth="Infinity" text="Загрузить с сервера" HBox.hgrow="ALWAYS" onAction="#btnGetFileAction"/>
         <Button maxWidth="Infinity" text="Удалить" HBox.hgrow="ALWAYS" />
         <Button maxWidth="Infinity" text="Выход" HBox.hgrow="ALWAYS" onAction="#btnExitAction"/>
         <padding>
