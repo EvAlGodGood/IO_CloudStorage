@@ -22,6 +22,7 @@ public class Server {
         System.out.println("fileName: " + fileName);
         File file = new File ("./server/Server_Files/" + fileName); //создали файл с полученным от клиента именем
         file.createNewFile();
+
         try (FileOutputStream oss = new FileOutputStream(file)){ //вписали из сокета в файл кусками из буфера
             byte [] buffer = new byte [256];
             while (true){
