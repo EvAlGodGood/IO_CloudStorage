@@ -12,6 +12,7 @@
 
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
 <VBox fx:controller="Controller"
       xmlns:fx="http://javafx.com/fxml" alignment="center" >
 
@@ -22,20 +23,36 @@
     </MenuBar>
 
     <TextField promptText="Server checked" HBox.hgrow="ALWAYS" />
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <HBox>
+                <ComboBox fx:id="disksBox" onAction="#selectDiskAction"/>
+                <TextField fx:id="textFieldPathClient" HBox.hgrow="ALWAYS" />
+                <Button text="Вверх" onAction="#btnPathUpAction"/>
+            </HBox>
 
-    <HBox>
-        <ComboBox />
-        <TextField HBox.hgrow="ALWAYS" />
-        <Button text="Вверх" />
+            <TableView fx:id="tableFileClient" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"/>
+            <padding>
+                <Insets left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <TextField fx:id="textFieldServer" promptText="Server-Приветствую User-показаны Ваши файлы" HBox.hgrow="ALWAYS" />
+            <TableView fx:id="tableFileServer" VBox.vgrow="ALWAYS"/>
+            <padding>
+                <Insets right="5.0" top="5.0" />
+            </padding>
+        </VBox>
+
     </HBox>
 
-    <ListView fx:id="listFileClient" VBox.vgrow="ALWAYS"/>
 
-    <HBox spacing="5">
-        <Button maxWidth="Infinity" text="Выгрузить на сервер" HBox.hgrow="ALWAYS" onAction="#btnSendFileAction"/>
-        <Button maxWidth="Infinity" text="Загрузить с сервера" HBox.hgrow="ALWAYS" onAction="#btnGetFileAction"/>
-        <Button maxWidth="Infinity" text="Удалить" HBox.hgrow="ALWAYS" />
-        <Button maxWidth="Infinity" text="Выход" HBox.hgrow="ALWAYS" onAction="#btnExitAction"/>
+    <HBox spacing="5" >
+        <Button maxWidth="Infinity" focusTraversable="false" text="Выгрузить на сервер" HBox.hgrow="ALWAYS" onAction="#btnSendFileAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Загрузить с сервера" HBox.hgrow="ALWAYS" onAction="#btnGetFileAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Удалить" HBox.hgrow="ALWAYS" />
+        <Button maxWidth="Infinity" focusTraversable="false" text="Выход" HBox.hgrow="ALWAYS" onAction="#btnExitAction"/>
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
